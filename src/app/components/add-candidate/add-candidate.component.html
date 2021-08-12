@@ -1,0 +1,35 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="fullName"
+          required
+          [(ngModel)]="candidate.fullName"
+          name="fullName"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="Score">Score</label>
+        <input
+          class="form-control"
+          id="Score"
+          required
+          [(ngModel)]="candidate.score"
+          name="Score"
+        />
+      </div>
+
+      <button (click)="saveCandidate()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Candidate was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newCandidate()">Ajouter</button>
+    </div>
+  </div>
+</div>
